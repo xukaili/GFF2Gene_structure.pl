@@ -6,7 +6,6 @@ __`GFF2Gene_structure.pl`__ can be used to draw the Gene structure quickly in `P
 > 基因结构作图.</br>
 > A tool to draw Gene structure based on perl and R language.</br>
 
-
 ## Dependencies
 All __`R`__ versions and __`perl 5`__</br></br>
 
@@ -18,3 +17,6 @@ e.g. perl  GFF2Gene_structure.pl  test.gff  Si1g001080
 e.g. perl  GFF2Gene_structure.pl  test.gff  Si1g001100
 ```
 </br>
+
+## Contact information
+For any questions please contact xukai_li@qq.com</br>
