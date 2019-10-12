@@ -109,9 +109,9 @@ genemodel_plot<-function(model, xaxis=TRUE) {
   text(start -1600, -0.6, "UTR", cex=0.7, col="black", pos=4, offset=-1)
   rect(start -1500, -1, start -1000, -1.2, border = "dodgerblue4" , col ="steelblue3")
   text(start -1600, -1.1, "CDS", cex=0.7, col="black", pos=4, offset=-1)
-
+  
+  text(start -1600, -1.6, "$ARGV[1]", cex=0.7, col="black", pos=4, offset=-1)
 }
-
 
 pdf(file="Plot_gene-$ARGV[1].pdf")
 $ARGV[1] <- read.table('gene_gff-$ARGV[1].txt',stringsAsFactors = F, header = F,comment.char = "#",sep = '\\t')
