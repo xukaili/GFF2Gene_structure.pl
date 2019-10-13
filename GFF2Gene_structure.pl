@@ -2,37 +2,13 @@
 my $usage=<<USAGE;
 Usage:
      perl  $0  genome.gff  Your_gene_ID
-e.g. perl  $0  test.gff    Si1g001100
+e.g. perl  $0  test.gff    Si1g001080.2
 USAGE
 print $usage if(@ARGV==0);
 exit if(@ARGV==0);
 
 $mychr = $mystart = $myend =0;
 system("grep  '$ARGV[1]' $ARGV[0] > gene_gff-$ARGV[1].txt");
-open GFF ,"gene_gff-$ARGV[1].txt" or die "$!";
-while (<GFF>) {
-    $_ =~ s/\n*|\r*//g;
-    if($_ =~ /\texon\t/){
-        @F = split(/\t/,$_);
-        $F[8]=~/Parent=(.*?);/;
-        $cds_pos{$1}{"$F[3] $F[4] $F[7]"}=1;
-        $contig{$1}=$F[0];
-        $stream{$1}=$F[6];
-    }
-    if ($_ =~ /\tgene\t/){
-        @gff = split(/\t/,$_);
-        $mychr = $gff[0];
-        if ($gff[6] eq '+') {
-            $mystart = $gff[3] - 2000;
-            $myend   = $gff[4] + 500;
-        }
-        elsif ($gff[6] eq '-') {
-            $mystart = $gff[3] - 500;
-            $myend   = $gff[4] + 2000;
-        }
-    }
-}
-close GFF;
 
 open OUTR,">Plot_gene-$ARGV[1].R" or die $!;
 print OUTR <<EOF;
@@ -119,7 +95,6 @@ genemodel_plot(model=$ARGV[1], xaxis=T)
 
 dev.off()
 EOF
-
 
 system("Rscript Plot_gene-$ARGV[1].R");
 system("rm -rf gene_gff-$ARGV[1].txt");
