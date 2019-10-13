@@ -7,7 +7,7 @@ __`GFF2Gene_structure.pl`__ can be used to draw the Gene structure quickly in `P
 > A tool to draw Gene structure based on perl and R language.</br>
 
 ## Dependencies
-All __`R`__ versions and __`perl 5`__</br></br>
+__`perl 5`__ and all __`R`__ versions. </br></br>
 
 ## Getting started
 Put __`Genes_on_Chr.R`__ and GFF files in a same dir, then run:</br>
