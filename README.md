@@ -13,8 +13,8 @@ All __`R`__ versions and __`perl 5`__</br></br>
 Put __`Genes_on_Chr.R`__ and GFF files in a same dir, then run:</br>
 ```
      perl  GFF2Gene_structure.pl  genome.gff  Your_gene_ID
-e.g. perl  GFF2Gene_structure.pl  test.gff  Si1g001080
-e.g. perl  GFF2Gene_structure.pl  test.gff  Si1g001100
+e.g. perl  GFF2Gene_structure.pl  test.gff  Si1g001080.2
+e.g. perl  GFF2Gene_structure.pl  test.gff  Si1g001100.1
 ```
 </br>
 
